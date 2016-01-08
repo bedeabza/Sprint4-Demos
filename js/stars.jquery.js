@@ -26,8 +26,10 @@ $.fn.stars = function(options) {
             var $container = $('<span></span>').addClass('stars-container');
 
             var drawActiveStars = function () {
+                var $stars = $container.find('.star').removeClass('hover');
+                
                 for (var i = 0; i < $this.val(); i++) {
-                    $container.find('.star').eq(i).addClass('hover');
+                    $stars.eq(i).addClass('hover');
                 }
             };
 
@@ -71,6 +73,8 @@ $.fn.stars = function(options) {
             $this.attr('type', 'hidden');
             $this.after($container);
             $this.data('created-stars', 1);
+            
+            $this.on('change', drawActiveStars);
 
             drawActiveStars();
         } else {
