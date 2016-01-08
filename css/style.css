@@ -1,0 +1,11 @@
+.stars-container {
+    font-size: 30px;
+}
+
+.stars-container .star {
+    cursor: pointer;
+}
+
+.star.hover {
+    color: gold;
+}
